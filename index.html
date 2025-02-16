@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajin Porfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Navebar-->
+    <nav class="navbar">
+        <div class="left">
+            <a href="/"> Tasnim Abrar Sajin</a>
+        </div>
+
+        <div class="right">
+            <a href="https://www.facebook.com/share/1HEFTP9mcQ/" target="blank" rel="noopener no-referrer">
+                <i class="fa-brands fa-square-facebook"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="http://www.linkedin.com/in/tasnim-abrar-8325a928b" target="blank" rel="noopener no-referrer">
+                <i class="fa-brands fa-linkedin"></i>
+                <span>Linkedin</span>
+            </a>
+            <a href="mailto: 222201119@uap-bd.edu">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+    </nav>
+    <main>
+        <!-- Section 1: Hero-->
+         <section class="hero-section">
+            <div class="text">
+                <h2>Hi! I'm Sajin</h2>
+                <p>I'm a Student. I study at "University of Asia Pacific". I'm developing my skills day by day. In future I want to be a Software Engineer. Thank you for visiting...</p>
+                <div class="link">
+                    <a href="#skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span>
+                    </a>
+
+                    <a href="#pen">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                        <span>Testimony</span>
+                    </a>
+
+                    <a href="#contact">
+                        <i class="fa-solid fa-address-card"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+            <div class="headshot">
+                <img src="images/1739619123365.jpg">
+            </div>
+         </section>
+
+         <!-- Section 2: Skills-->
+         <section id="skills" class="skill-section">
+            <h2>Skills</h2>
+            <p>I am just a learner now. But I learn so fast. In term of language, I know C, C++, JAVA, HTML, CSS, PYTHON. On the other hand, I know DATABASE aswell. I am verry good at math and i know some datastructures and algorithms.</p>
+
+            <div class="cells">
+
+                <div class="cell">
+                    <img src="images/html-5 (1) (1).png" alt="html logo">
+                    <span> HTML</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/c-logo (1) (1).png" alt="C logo">
+                    <span> C++</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/css-3 (1) (1).png" alt="css logo">
+                    <span> CSS</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/python (1) (1).png" alt="python logo">
+                    <span> PYTHON</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/database-storage (1) (1).png" alt="database logo">
+                    <span> DATABASE</span>
+                </div>
+
+                <div class="cell">
+                    <img src="images/java (1) (2).png" alt="java logo">
+                    <span> JAVA</span>
+                </div>
+            </div>
+
+         </section>
+
+         <!-- Section 3: Testimony-->
+         <section id="pen" class="testimony-section">
+            <h2>Testimony</h2>
+            <div class="group">
+                <div class="person-details">
+                    <img src="images/IMG_20241104_162408.jpg">
+                    <p>Tasnim Abrar Sajin</p>
+                </div>
+
+                <div class="text">
+                    "Professional, creative, and detail-oriented—Tasnim Abrar Sajin delivers exceptional work every time. A pleasure to collaborate with!"
+                </div>
+
+            </div>
+         </section>
+
+         <!-- Section 4: Contact-->
+         <section id="contact" class="contact-section">
+            <h2>Contact</h2>
+            <div class="group">
+                <div class="text">
+                    Have a project in mind or just want to connect? Feel free to reach out! You can contact me at Email or connect with me on my social media. Looking forward to hearing from you!" Let me know if you’d like any tweaks! 😊
+                </div>
+                <form>
+                    <level for="name">Name</level>
+                    <input type="text" id="name">
+
+                    <level for="email">Email</level>
+                    <input type="email" id="email">
+
+                    <level for="message">Message</level>
+                    <textarea id="message" cols="30" rows="10"></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            
+         </section>
+        
+         <section class="footer-content">
+            
+            <div class="group">
+                <div class="contact">
+                    <h3>Contact</h3>
+                    <p>Phone: +8801945-506330</pp>
+                </div>
+
+                <div class="visit">
+                    <h3>Also Visit</h3>
+                    <a href="/">Lubaba</a>
+                    <a href="/">Reeman</a>
+                    <a href="/">Nabil</a>
+                </div>
+            </div>
+            
+         </section>
+    </main>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</html>
