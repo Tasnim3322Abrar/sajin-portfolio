@@ -1,167 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sajin Porfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+<title>Tasnim Abrar Sajin | Portfolio</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary: #4f46e5;
+  --accent: #22c55e;
+  --dark: #0f172a;
+  --muted: #64748b;
+  --bg: #f8fafc;
+}
+
+* { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+}
+
+/* NAVBAR */
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #4f46e5, #22c55e);
+  color: white;
+}
+
+.hero h1 span {
+  color: #e0e7ff;
+}
+
+.hero .btn {
+  border-radius: 30px;
+  padding: 12px 30px;
+}
+
+/* SECTION */
+.section {
+  padding: 90px 0;
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+/* SKILLS */
+.skill-card {
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
+  background: white;
+  transition: all .3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.1);
+}
+
+/* PROJECTS */
+
+.projects-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+
+.projects-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollProjects 0s linear infinite;
+}
+
+.project-card {
+  min-width: 350px;
+  max-width: 350px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.project-card img {
+  width: 100%;
+  display: block;
+}
+
+/* Pause on hover */
+.projects-wrapper:hover .projects-track {
+  animation-play-state: paused;
+}
+
+/* Auto-scroll animation */
+@keyframes scrollProjects {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.project-card {
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,.1);
+}
+
+.project-card img {
+  transition: transform .4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15,23,42,.85);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: .3s;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+/* EXPERIENCE */
+.timeline {
+  border-left: 3px solid var(--primary);
+  padding-left: 30px;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+}
+
+/* contact */
+.contact-card {
+  background: #c6c4c4;
+  padding: 30px 20px;
+  border-radius: 12px;
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4);
+}
+
+.contact-card i {
+  color: #211e1e;
+  transition: color 0.35s ease;
+}
+
+.contact-card:hover i {
+  color: #0d6efd; /* Bootstrap primary blue */
+}
+
+.contact-card a {
+  color: #030303;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contact-card:hover a {
+  color: #ffffff;
+}
+
+/* FOOTER */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 40px 0;
+}
+
+footer a {
+  color: #e0e7ff;
+  margin: 0 10px;
+}
+</style>
 </head>
+
 <body>
-    <!--Navebar-->
-    <nav class="navbar">
-        <div class="left">
-            <a href="/"> Tasnim Abrar Sajin</a>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<div class="container">
+  <a class="navbar-brand" href="#">Tasnim Abrar Sajin</a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="nav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+      <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero position-relative overflow-hidden">
+  <!-- Animated Background Glow -->
+  <div class="hero-glow"></div>
+
+  <div class="container text-center position-relative" data-aos="fade-up">
+    <h1 class="display-4 fw-bold hero-title">
+      Hi, I'm <span>Tasnim Abrar Sajin</span>
+    </h1>
+
+    <p class="lead mt-3 hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+      Engineering Student | Software Developer | ML & Vision Enthusiast
+    </p>
+
+    <div class="mt-4 hero-buttons d-flex justify-content-center gap-3 flex-wrap">
+  <a href="#projects" class="btn btn-light">
+    View Projects
+  </a>
+
+  <a href="#contact" class="btn btn-outline-light">
+    Contact Me
+  </a>
+
+  <a href="images/resume.pdf" class="btn btn-outline-light" download>
+    <i class="fas fa-download me-2"></i>Resume
+  </a>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+<div class="container">
+<div class="row align-items-center">
+  <div class="col-md-6" data-aos="fade-right">
+    <img src="images/Sajin.jpg" class="img-fluid rounded-4 shadow">
+  </div>
+  <div class="col-md-6" data-aos="fade-left">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a Computer Science & Engineering student at the University of Asia Pacific,
+      passionate about software development, machine learning, and intelligent systems.
+      I enjoy building scalable platforms and working on real-world problem-solving projects.
+    </p>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section bg-light">
+<div class="container">
+<h2 class="section-title text-center">Skills</h2>
+<div class="row g-4">
+  <div class="col-md-3" data-aos="zoom-in"><div class="skill-card text-center"><i class="fab fa-python fa-3x mb-3"></i><h5>Python</h5></div></div>
+  <div class="col-md-3" data-aos="zoom-in"><div class="skill-card text-center"><i class="fab fa-js fa-3x mb-3"></i><h5>JavaScript</h5></div></div>
+  <div class="col-md-3" data-aos="zoom-in"><div class="skill-card text-center"><i class="fas fa-brain fa-3x mb-3"></i><h5>Machine Learning</h5></div></div>
+  <div class="col-md-3"><div class="skill-card text-center"><i class="fab fa-java fa-3x mb-3"></i><h5>Java</h5></div></div>
+  <div class="col-md-3"><div class="skill-card text-center"><i class="fab fa-html5 fa-3x mb-3"></i><h5>HTML</h5></div></div>
+  <div class="col-md-3"><div class="skill-card text-center"><i class="fab fa-css3-alt fa-3x mb-3"></i><h5>CSS</h5></div></div>
+  <div class="col-md-3"><div class="skill-card text-center"><i class="fas fa-c fa-3x mb-3"></i><h5>C</h5></div></div>
+  <div class="col-md-3" data-aos="zoom-in"><div class="skill-card text-center"><i class="fas fa-code fa-3x mb-3"></i><h5>Data Structures</h5></div></div>
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title text-center">Projects</h2>
+
+    <div class="projects-wrapper">
+      <div class="projects-track">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <img src="images/asloj_img.png" class="img-fluid">
+          <img src="images/asloj2_img.png" class="img-fluid">
+          <div class="project-overlay">
+            <div>
+              <h5>ASLoj – Online Judge</h5>
+              <p>University-level competitive programming platform</p>
+              <a href="https://github.com/lubabahasan/ASLoj" class="btn btn-light btn-sm">GitHub</a>
+            </div>
+          </div>
         </div>
 
-        <div class="right">
-            <a href="https://www.facebook.com/share/1HEFTP9mcQ/" target="blank" rel="noopener no-referrer">
-                <i class="fa-brands fa-square-facebook"></i>
-                <span>Facebook</span>
-            </a>
-            <a href="http://www.linkedin.com/in/tasnim-abrar-8325a928b" target="blank" rel="noopener no-referrer">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>Linkedin</span>
-            </a>
-            <a href="mailto: 222201119@uap-bd.edu">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Email</span>
-            </a>
+        <!-- Project 2 -->
+        <div class="project-card">
+          <img src="images/uap_cse1.png" class="img-fluid">
+            <img src="images/uap_cse2.png" class="img-fluid">
+          <div class="project-overlay">
+            <div>
+              <h5>UAP CSE - An academic Website</h5>
+              <p>Vision-based textile inspection system</p>
+              <a href="https://cse.uap-bd.edu/" class="btn btn-light btn-sm">Website</a>
+            </div>
+          </div>
         </div>
-    </nav>
-    <main>
-        <!-- Section 1: Hero-->
-         <section class="hero-section">
-            <div class="text">
-                <h2>Hi! I'm Sajin</h2>
-                <p>I'm a Student. I study at "University of Asia Pacific". I'm a passionate Engineer specializing in Developing, Teaching and Algorithoms. Explore my work to see how I bring creativity, innovation, and precision to every project I undertake.</p>
-                <div class="link">
-                    <a href="#skills">
-                        <i class="fa-solid fa-code"></i>
-                        <span>Skills</span>
-                    </a>
 
-                    <a href="#pen">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <span>Testimony</span>
-                    </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-                    <a href="#contact">
-                        <i class="fa-solid fa-address-card"></i>
-                        <span>Contact</span>
-                    </a>
-                </div>
-            </div>
-            <div class="headshot">
-                <img src="images/1739619123365.jpg">
-            </div>
-         </section>
 
-         <!-- Section 2: Skills-->
-         <section id="skills" class="skill-section">
-            <h2>Skills</h2>
-            <p>I am just a learner now. But I learn so fast. In term of language, I know C, C++, JAVA, HTML, CSS, PYTHON. On the other hand, I know DATABASE aswell. I am verry good at math and i know some datastructures and algorithms.</p>
+<!-- EXPERIENCE -->
+<section id="experience" class="section bg-light">
+<div class="container">
+<h2 class="section-title text-center">Experience & Education</h2>
+<div class="timeline">
+  <div class="timeline-item" data-aos="fade-right">
+    <h5>University of Asia Pacific</h5>
+    <p class="text-muted">BSc in CSE</p>
+      <p class="text-muted">cgpa-3.64/4.0(Till 6th semester)</p>
+  </div>
+  <div class="timeline-item" data-aos="fade-right">
+    <h5>Workshops</h5>
+    <p class="text-muted">Robotics, Cyber Security</p>
+  </div>
+</div>
+</div>
+</section>
 
-            <div class="cells">
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title text-center">Contact</h2>
 
-                <div class="cell">
-                    <img src="images/html-5 (1) (1).png" alt="html logo">
-                    <span> HTML</span>
-                </div>
+    <div class="row g-4 text-center">
 
-                <div class="cell">
-                    <img src="images/c-logo (1) (1).png" alt="C logo">
-                    <span> C++</span>
-                </div>
+      <!-- Email -->
+      <div class="col-md-4">
+        <div class="contact-card">
+          <i class="fas fa-envelope fa-2x mb-3"></i>
+          <p>
+            <a href="mailto:22201119@uap-bd.edu">
+              Email
+            </a>
+          </p>
+        </div>
+      </div>
 
-                <div class="cell">
-                    <img src="images/css-3 (1) (1).png" alt="css logo">
-                    <span> CSS</span>
-                </div>
+      <!-- GitHub -->
+      <div class="col-md-4">
+        <div class="contact-card">
+          <i class="fab fa-github fa-2x mb-3"></i>
+          <p>
+            <a href="https://github.com/Tasnim3322Abrar" target="_blank">
+              github
+            </a>
+          </p>
+        </div>
+      </div>
 
-                <div class="cell">
-                    <img src="images/python (1) (1).png" alt="python logo">
-                    <span> PYTHON</span>
-                </div>
+      <!-- LinkedIn -->
+      <div class="col-md-4">
+        <div class="contact-card">
+          <i class="fab fa-linkedin fa-2x mb-3"></i>
+          <p>
+            <a href="https://www.linkedin.com/in/tasnim-abrar-8325a928b/" target="_blank">
+              linkedin
+            </a>
+          </p>
+        </div>
+      </div>
 
-                <div class="cell">
-                    <img src="images/database-storage (1) (1).png" alt="database logo">
-                    <span> DATABASE</span>
-                </div>
+    </div>
+  </div>
+</section>
 
-                <div class="cell">
-                    <img src="images/java (1) (2).png" alt="java logo">
-                    <span> JAVA</span>
-                </div>
-            </div>
+<footer>
+<div class="container text-center">
+<p>© 2026 Tasnim Abrar Sajin</p>
+</div>
+</footer>
 
-         </section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init({ duration: 1000, once: true });</script>
 
-         <!-- Section 3: Testimony-->
-         <section id="pen" class="testimony-section">
-            <h2>Testimony</h2>
-            <div class="group">
-                <div class="person-details">
-                    <img src="images/IMG_20241104_162408.jpg">
-                    <p>Tasnim Abrar Sajin</p>
-                </div>
-
-                <div class="text">
-                    "Professional, creative, and detail-oriented—Tasnim Abrar Sajin delivers exceptional work every time. A pleasure to collaborate with!"
-                </div>
-
-            </div>
-         </section>
-
-         <!-- Section 4: Contact-->
-         <section id="contact" class="contact-section">
-            <h2>Contact</h2>
-            <div class="group">
-                <div class="text">
-                    Have a project in mind or just want to connect? Feel free to reach out! You can contact me at Email or connect with me on my social media. Looking forward to hearing from you!" Let me know if you’d like any tweaks! 😊
-                </div>
-                <form>
-                    <level for="name">Name</level>
-                    <input type="text" id="name">
-
-                    <level for="email">Email</level>
-                    <input type="email" id="email">
-
-                    <level for="message">Message</level>
-                    <textarea id="message" cols="30" rows="10"></textarea>
-
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-            
-         </section>
-        
-         <section class="footer-content">
-            
-            <div class="group">
-                <div class="contact">
-                    <h3>Contact</h3>
-                    <p>Phone: +8801945-506330</p>
-                    <p>Address: Shaymoli, Dhaka</p>
-                </div>
-
-                <div class="visit">
-                    <h3>Also Visit</h3>
-                    <a href="http://lubabahasan.github.io">Lubaba</a>
-                    <a href="https://anika-22201115.github.io/Augustine100/">Anika</a>
-                    <a href="https://istiaknabil.github.io/PortFolio/portfolio.html">Nabil</a>
-                </div>
-            </div>
-            
-         </section>
-    </main>
 </body>
-<script src="jquery.min.js"></script>
-<script src="script.js"></script>
 </html>
